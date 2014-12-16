@@ -1,0 +1,17 @@
+style "fill"
+{
+    text[SELECTED]                    = "#f0f0f0"
+    text[ACTIVE]                      = "#f0f0f0"
+    fg[NORMAL]                        = "#606060"
+    fg[PRELIGHT]                      = "#f0f0f0"
+    fg[ACTIVE]                        = "#f0f0f0"
+    base[SELECTED]                    = "#7f1926"
+    base[ACTIVE]                      = "#993745"
+    bg[NORMAL]                        = "#d0d0d0"
+    bg[PRELIGHT]                      = "#7f1926"
+    bg[ACTIVE]                        = "#993745"
+    GtkTreeView::odd_row_color        = "#7f1926"
+    GtkTreeView::even_row_color       = "#ffffff"
+}
+
+
