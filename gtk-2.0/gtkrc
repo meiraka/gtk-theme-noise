@@ -676,6 +676,10 @@ widget_class "*<GtkCheckMenuItem>*" style "radiocheckbutton"
 
 style "spinbutton"
 {
+    bg[NORMAL] = "#ffffff"
+    bg[ACTIVE] = "#ffffff"
+    bg[PRELIGHT] = "#ffffff"
+    bg[INSENSITIVE] = "#ffffff"
     engine "pixmap"
     {
         image
@@ -688,7 +692,7 @@ style "spinbutton"
             state = INSENSITIVE
             detail = "spinbutton_up"
             recolorable = TRUE
-            file = "fills/gray-0.3.png"
+            file = "backgrounds/trans.png"
             border = { 0, 0, 0, 0 }
         }
         image
@@ -697,8 +701,8 @@ style "spinbutton"
             state = INSENSITIVE
             detail = "spinbutton_down"
             recolorable = TRUE
-            file = "fills/gray-0.3.png"
-            border = { 0, 0, 0, 0 }
+            file = "lines/bottom.png"
+            border = { 0, 0, 0, 2 }
         }
         image
         {
@@ -706,11 +710,11 @@ style "spinbutton"
             state = NORMAL
             detail = "spinbutton_up"
             recolorable = TRUE
-            file = "fills/gray-0.3.png"
+            file = "backgrounds/trans.png"
             border = { 0, 0, 0, 0 }
-            overlay_file = "buttons/check/normal.png"
+            overlay_file = "fills/gray-0.3.png"
             stretch = TRUE
-            overlay_border = { 2, 2, 2, 2 }
+            overlay_border = { 0, 0, 0, 0 }
         }
         image
         {
@@ -718,33 +722,40 @@ style "spinbutton"
             state = NORMAL
             detail = "spinbutton_down"
             recolorable = TRUE
-            file = "fills/gray-0.3.png"
+            file = "backgrounds/trans.png"
             border = { 0, 0, 0, 0 }
-            overlay_file = "buttons/check/normal.png"
+            overlay_file = "fills/gray-0.3.png"
             stretch = TRUE
-            overlay_border = { 2, 2, 2, 2 }
+            overlay_border = { 0, 0, 0, 0 }
         }
         image
         {
             function = BOX
             detail = "spinbutton_up"
             recolorable = TRUE
-            file = "fills/gray-0.3.png"
+            file = "backgrounds/trans.png"
             border = { 0, 0, 0, 0 }
-            overlay_file = "buttons/check/active.png"
+            overlay_file = "fills/darkgray-0.3.png"
             stretch = TRUE
-            overlay_border = { 2, 2, 2, 2 }
+            overlay_border = { 0, 0, 0, 0 }
         }
         image
         {
             function = BOX
             detail = "spinbutton_down"
             recolorable = TRUE
-            file = "fills/gray-0.3.png"
+            file = "backgrounds/trans.png"
             border = { 0, 0, 0, 0 }
-            overlay_file = "buttons/check/active.png"
+            overlay_file = "fills/darkgray-0.3.png"
             stretch = TRUE
-            overlay_border = { 2, 2, 2, 2 }
+            overlay_border = { 0, 0, 0, 0 }
+        }
+        image
+        {
+            function = BOX
+            recolorable = TRUE
+            overlay_file = "lines/bottom.png"
+            overlay_border = { 0, 0, 0, 2 }
         }
     }
 }
