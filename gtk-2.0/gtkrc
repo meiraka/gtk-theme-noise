@@ -156,25 +156,7 @@ style "menu"
     ythickness = 2
     bg[NORMAL] = "#d0d0d0"
 }
-
-style "menubar"
-{
-    xthickness = 4
-    ythickness = 2
-    engine "pixmap"
-    {
-        image
-        {
-            function = BOX
-            state = NORMAL
-            file = "backgrounds/noise-white.png"
-            border = { 0, 0, 0, 0 }
-            stretch = FALSE
-            overlay_file = "fills/darkgray-0.3.png"
-            overlay_border = { 0, 0, 0, 0 }
-        }
-    }
-}
+widget_class "*<GtkMenu>*" style "menu"
 
 style "menuitem" = "fill"   
 {
@@ -184,8 +166,6 @@ style "menuitem" = "fill"
 
 widget_class "*<GtkMenuItem>*" style "menuitem"
 widget_class "*<GtkTearoffMenuItem>*" style "menuitem"
-widget_class "*<GtkMenu>*" style "menu"
-widget_class "*<GtkMenuBar>*" style "menubar"
 
 style "scrollbar"
 {
@@ -430,15 +410,27 @@ style "entry"
     {
         image
         {
-            function = FOCUS
+            function = SHADOW
+            detail = "entry"
             file = "entries/normal.png"
             border = { 3, 0, 0, 4 }
             stretch = TRUE
         }
+    }
+}
+
+style "focus-underline"
+{
+    xthickness = 2
+    ythickness = 4
+    GtkWidget::focus-line-width = 0
+    GtkWidget::focus-padding = 0
+    GtkWidget::interior_focus = 0
+    engine "pixmap"
+    {
         image
         {
-            function = SHADOW
-            detail = "entry"
+            function = FOCUS
             file = "entries/normal.png"
             border = { 3, 0, 0, 4 }
             stretch = TRUE
@@ -450,6 +442,8 @@ widget_class "*<GtkEntry>*" style "fill"
 widget_class "*<GtkOldEditable*" style "fill"
 widget_class "*<GtkEntry>*" style "entry"
 class "GtkOldEditable" style "entry"
+widget_class "*<GtkEntry>*" style "focus-underline"
+class "GtkOldEditable" style "focus-underline"
 
 style "listitem" = "fill"
 {
@@ -504,65 +498,23 @@ style "button" = "fill"
 
 widget_class "*<GtkButton>*" style "fill"
 widget_class "*<GtkButton>*" style "button"
-widget_class "*<GtkButton>*" style "entry"
+widget_class "*<GtkButton>*" style "focus-underline"
 widget_class "*<GtkFontButton>*" style "fill"
 widget_class "*<GtkFontButton>*" style "button"
-widget_class "*<GtkFontButton>*" style "entry"
+widget_class "*<GtkFontButton>*" style "focus-underline"
 widget_class "*<GtkColorButton>*" style "fill"
 widget_class "*<GtkColorButton>*" style "button"
-widget_class "*<GtkColorButton>*" style "entry"
+widget_class "*<GtkColorButton>*" style "focus-underline"
 widget_class "*<GtkToggleButton>*" style "fill"
 widget_class "*<GtkToggleButton>*" style "button"
-widget_class "*<GtkToggleButton>*" style "entry"
+widget_class "*<GtkToggleButton>*" style "focus-underline"
 widget_class "*Combo*" style "fill"
 widget_class "*Combo*" style "button"
 widget_class "*Combo*" style "entry"
+widget_class "*Combo*" style "focus-underline"
 widget_class "*<GtkOptionMenu>*" style "fill"
 widget_class "*<GtkOptionMenu>*" style "button"
-widget_class "*<GtkOptionMenu>*" style "entry"
-
-style "toolbutton" = "button"
-{
-    xthickness = 1
-    ythickness = 1
-    GtkWidget::focus_padding = 0
-
-    engine "pixmap" {
-        image
-        {
-            function = BOX
-            recolorable = TRUE
-            state = NORMAL
-            file = "backgrounds/trans.png"
-            border = { 0, 0, 0, 0 }
-            stretch = TRUE
-        }
-    }
-}
-
-widget_class "*Tool*Button*" style "toolbutton"
-widget_class "*Tool*GtkEntry*" style "entry"
-
-style "toolbar" = "fill"
-{
-    xthickness = 0
-    ythickness = 0
-    engine "pixmap"
-    {
-        image
-        {
-            function = BOX
-            file = "backgrounds/noise-white.png"
-            border = { 0, 0, 0, 0 }
-            stretch = FALSE
-            overlay_file = "fills/darkgray-0.3.png"
-            overlay_stretch = TRUE
-
-        }
-    }
-}
-
-class "GtkToolbar" style "toolbar"    
+widget_class "*<GtkOptionMenu>*" style "focus-underline"
 
 style "radiocheckbutton" = "fill"
 {
@@ -886,3 +838,69 @@ style "handlebox" = "default"
 
 class "GtkHandleBox" style "handlebox"
 class "GtkPaned" style "handlebox"
+
+style "menubar"
+{
+    xthickness = 4
+    ythickness = 2
+    engine "pixmap"
+    {
+        image
+        {
+            function = BOX
+            state = NORMAL
+            file = "backgrounds/noise-white.png"
+            border = { 0, 0, 0, 0 }
+            stretch = FALSE
+            overlay_file = "fills/darkgray-0.3.png"
+            overlay_border = { 0, 0, 0, 0 }
+        }
+    }
+}
+
+widget_class "*<GtkMenuBar>*" style "menubar"
+style "toolbar" = "fill"
+{
+    xthickness = 0
+    ythickness = 0
+    engine "pixmap"
+    {
+        image
+        {
+            function = BOX
+            file = "backgrounds/noise-white.png"
+            border = { 0, 0, 0, 0 }
+            stretch = FALSE
+            overlay_file = "fills/darkgray-0.3.png"
+            overlay_stretch = TRUE
+
+        }
+    }
+}
+
+class "GtkToolbar" style "toolbar"
+
+style "toolbutton" = "button"
+{
+    xthickness = 1
+    ythickness = 1
+    GtkWidget::focus_padding = 0
+
+    engine "pixmap" {
+        image
+        {
+            function = BOX
+            recolorable = TRUE
+            state = NORMAL
+            file = "backgrounds/trans.png"
+            border = { 0, 0, 0, 0 }
+            stretch = TRUE
+        }
+    }
+}
+
+widget_class "*Tool*Button*" style "toolbutton"
+widget_class "*Tool*button*" style "fill"
+widget_class "*Tool*button*" style "focus-underline"
+widget_class "*Tool*GtkEntry*" style "entry"
+widget_class "*Tool*GtkEntry*" style "focus-underline"
