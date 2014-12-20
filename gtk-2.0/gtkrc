@@ -294,8 +294,8 @@ style "range" = "default"
             function = BOX
             recolorable = TRUE
             detail = "trough"
-            file = "ranges/horizontal.png"
-            border = { 4, 4, 4, 4 }
+            file = "lines/bottom.png"
+            border = { 2, 2, 2, 2 }
             stretch = TRUE
             orientation = HORIZONTAL
         }    
@@ -342,8 +342,8 @@ style "range" = "default"
             function = BOX
             recolorable = TRUE
             detail = "trough"
-            file = "ranges/vertical.png"
-            border = { 6, 6, 6, 6 }
+            file = "lines/right.png"
+            border = { 2, 2, 2, 2 }
             stretch = TRUE
             orientation = VERTICAL
         }
@@ -398,13 +398,13 @@ class "GtkProgressBar" style "progressbar"
 
 style "entry"
 {
-    xthickness = 2
-    ythickness = 4
+    xthickness = 4
+    ythickness = 2
     GtkWidget::focus-line-width = 0
     GtkWidget::focus-padding = 0
     GtkWidget::interior_focus = 0
     GtkEntry::honors-transparent-bg-hint = 1
-    GtkEntry::inner-border = { 0, 0, 0, 4 }
+    GtkEntry::inner-border = { 0, 0, 0, 2 }
     GtkEntry::padding = 0
     engine "pixmap"
     {
@@ -412,8 +412,8 @@ style "entry"
         {
             function = SHADOW
             detail = "entry"
-            file = "entries/normal.png"
-            border = { 3, 0, 0, 4 }
+            file = "lines/bottom.png"
+            border = { 0, 0, 0, 2 }
             stretch = TRUE
         }
     }
@@ -421,8 +421,7 @@ style "entry"
 
 style "focus-underline"
 {
-    xthickness = 2
-    ythickness = 4
+    ythickness = 2
     GtkWidget::focus-line-width = 0
     GtkWidget::focus-padding = 0
     GtkWidget::interior_focus = 0
@@ -431,8 +430,8 @@ style "focus-underline"
         image
         {
             function = FOCUS
-            file = "entries/normal.png"
-            border = { 3, 0, 0, 4 }
+            file = "lines/bottom.png"
+            border = { 0, 0, 0, 2 }
             stretch = TRUE
         }
     }
