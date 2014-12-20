@@ -49,7 +49,10 @@ style "default"
     GtkScrollbar::min_slider_length   = 20
     GtkCheckButton::indicator_size    = 12
     GtkCheckButton::indicator_spacing = 3
-    GtkMenuBar::internal_padding      = 1
+    GtkMenuBar::internal_padding      = 0
+    GtkMenu::horizontal-padding       = 0
+    GtkMenu::vertical-padding         = 0
+    GtkSeparatorMenuItem::horizontal-padding = 7
     GtkOptionMenu::indicator_size     = { 15, 8 }
     GtkOptionMenu::indicator_spacing  = { 8, 2, 0, 0 }
     GtkNotebook::shadow_type          = GTK_SHADOW_NONE
@@ -150,8 +153,8 @@ class "GtkWindow" style "window"
 
 style "menu"
 {
-    xthickness                        = 0
-    ythickness                        = 0
+    xthickness                        = 4
+    ythickness                        = 2
     bg[NORMAL]                        = "#d0d0d0"
 }
 
@@ -164,47 +167,26 @@ style "menubar"
         image
         {
             function                  = BOX
-            file                      = "backgrounds/noise.png"
             state                     = NORMAL
+            file                      = "backgrounds/noise-white.png"
             border                    = { 0, 0, 0, 0 }
-            overlay_file              = "fills/darkgray-0.3.png"
-            overlay_border            = { 0, 0, 0, 0 }
             stretch                   = FALSE
-        }
-        image
-        {
-            function                  = BOX
-            file                      = "backgrounds/noise.png"
-            state                     = ACTIVE
-            border                    = { 0, 0, 0, 0 }
             overlay_file              = "fills/darkgray-0.3.png"
             overlay_border            = { 0, 0, 0, 0 }
-            stretch                  = FALSE
-        }
-        image
-        {
-            function                  = BOX
-            file                      = "backgrounds/noise.png"
-            state                     = INSENSITIVE
-            border                    = { 0, 0, 0, 0 }
-            overlay_file              = "fills/darkgray-0.3.png"
-            overlay_border            = { 0, 0, 0, 0 }
-            stretch                  = FALSE
         }
     }
 }
 
 style "menuitem" = "fill"   
 {
-    xthickness                        = 2
-    ythickness                        = 2
+    xthickness                        = 4
+    ythickness                        = 4
 }
 
-widget_class "*.<MenuItem>."          style "menuitem"
-widget_class "*GtkMenuItem*"          style "menuitem"
-widget_class "*GtkTearoffMenuItem*"   style "menuitem"
-class "GtkMenu"                       style "menu"
-widget_class "*GtkMenuBar*"           style "menubar"
+widget_class "*<GtkMenuItem>*"        style "menuitem"
+widget_class "*<GtkTearoffMenuItem>*" style "menuitem"
+widget_class "*<GtkMenu>*"            style "menu"
+widget_class "*<GtkMenuBar>*"         style "menubar"
 
 style "scrollbar"
 {
@@ -564,7 +546,7 @@ style "toolbar"                       = "fill"
         image
         {
             function                  = BOX
-            file                      = "backgrounds/noise.png"
+            file                      = "backgrounds/noise-white.png"
             border                    = { 0, 0, 0, 0 }
             stretch                   = FALSE
             overlay_file              = "fills/darkgray-0.3.png"
