@@ -26,11 +26,11 @@ style "default"
     text[ACTIVE] = "#f0f0f0"
     text[PRELIGHT] = "#ffffff"
 
-    xthickness = 2
-    ythickness = 2
+    xthickness = 0
+    ythickness = 0
 
-    GtkWidget::interior_focus = 6
-    GtkWidget::focus_padding = 1
+    GtkWidget::interior_focus = 2
+    GtkWidget::focus_padding = 2
     GtkWidget::cursor-color = "#808080"
     GtkWidget::link-color = "#6ca6e2"
     GtkWidget::visited-link-color = "#e26c8c"
@@ -44,7 +44,6 @@ style "default"
     GtkHScale::slider_length = 11
     GtkHScale::slider_width = 21
     GtkNotebook::tab-overlap = 0
-
     GtkPaned::handle_size = 0
     GtkScrollbar::min_slider_length = 20
     GtkCheckButton::indicator_size = 12
@@ -419,26 +418,27 @@ class "GtkProgressBar" style "progressbar"
 
 style "entry"
 {
-    xthickness = 0
-    ythickness = 2
+    xthickness = 2
+    ythickness = 4
+    GtkWidget::focus-line-width = 0
+    GtkWidget::focus-padding = 0
     GtkWidget::interior_focus = 0
-    GtkEntry::inner-border = { 0, 0, 0, 0}
+    GtkEntry::honors-transparent-bg-hint = 1
+    GtkEntry::inner-border = { 0, 0, 0, 4 }
     GtkEntry::padding = 0
     engine "pixmap"
     {
         image
         {
             function = FOCUS
-            recolorable = TRUE
             file = "entries/normal.png"
             border = { 3, 0, 0, 4 }
             stretch = TRUE
-        }    
+        }
         image
         {
             function = SHADOW
             detail = "entry"
-            state = NORMAL
             file = "entries/normal.png"
             border = { 3, 0, 0, 4 }
             stretch = TRUE
@@ -446,9 +446,9 @@ style "entry"
     }
 }
 
-widget_class "*GtkEntry*" style "fill"
-widget_class "*GtkOldEditable*" style "fill"
-class "GtkEntry" style "entry"
+widget_class "*<GtkEntry>*" style "fill"
+widget_class "*<GtkOldEditable*" style "fill"
+widget_class "*<GtkEntry>*" style "entry"
 class "GtkOldEditable" style "entry"
 
 style "listitem" = "fill"
@@ -502,18 +502,24 @@ style "button" = "fill"
     }
 }
 
-widget_class "*GtkButton*" style "fill"
-widget_class "*GtkButton*" style "button"
-widget_class "*GtkFontButton*" style "fill"
-widget_class "*GtkFontButton*" style "button"
-widget_class "*GtkColorButton*" style "fill"
-widget_class "*GtkColorButton*" style "button"
-widget_class "*GtkToggleButton*" style "fill"
-widget_class "*GtkToggleButton*" style "button"
+widget_class "*<GtkButton>*" style "fill"
+widget_class "*<GtkButton>*" style "button"
+widget_class "*<GtkButton>*" style "entry"
+widget_class "*<GtkFontButton>*" style "fill"
+widget_class "*<GtkFontButton>*" style "button"
+widget_class "*<GtkFontButton>*" style "entry"
+widget_class "*<GtkColorButton>*" style "fill"
+widget_class "*<GtkColorButton>*" style "button"
+widget_class "*<GtkColorButton>*" style "entry"
+widget_class "*<GtkToggleButton>*" style "fill"
+widget_class "*<GtkToggleButton>*" style "button"
+widget_class "*<GtkToggleButton>*" style "entry"
 widget_class "*Combo*" style "fill"
 widget_class "*Combo*" style "button"
-widget_class "*GtkOptionMenu*" style "fill"
-widget_class "*GtkOptionMenu*" style "button"
+widget_class "*Combo*" style "entry"
+widget_class "*<GtkOptionMenu>*" style "fill"
+widget_class "*<GtkOptionMenu>*" style "button"
+widget_class "*<GtkOptionMenu>*" style "entry"
 
 style "toolbutton" = "button"
 {
