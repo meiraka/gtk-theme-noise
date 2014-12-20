@@ -558,10 +558,11 @@ style "toolbar"                       = "fill"
 
 class "GtkToolbar"                    style "toolbar"    
 
-style "radiocheckbutton"
+style "radiocheckbutton" = "fill"
 {
     xthickness                        = 0
     ythickness                        = 0
+    fg[ACTIVE]                        = "#606060"
     engine "pixmap" 
     {
         image 
@@ -711,10 +712,10 @@ style "radiocheckbutton"
     }
 }
 
-class "GtkRadioButton"                style "radiocheckbutton"
-class "GtkRadioMenuItem"              style "radiocheckbutton"
-class "GtkCheckButton"                style "radiocheckbutton"
-class "GtkCheckMenuItem"              style "radiocheckbutton"
+widget_class "*<GtkRadioButton>*"     style "radiocheckbutton"
+widget_class "*<GtkRadioMenuItem>*"   style "radiocheckbutton"
+widget_class "*<GtkCheckButton>*"     style "radiocheckbutton"
+widget_class "*<GtkCheckMenuItem>*"   style "radiocheckbutton"
 
 style "spinbutton"
 {
