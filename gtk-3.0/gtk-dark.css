@@ -1,0 +1,20 @@
+@define-color text_link #7f1926;
+@define-color text_error #00ffff;
+@define-color text_normal #b0b0b0;
+
+@define-color fg_filled_insensitive #606060;
+@define-color bg_filled_insensitive #ffffff;
+@define-color fg_filled_normal #a0a0a0;
+@define-color bg_filled_normal #808080;
+@define-color fg_filled_hover #f0f0f0;
+@define-color bg_filled_hover #7f1926;
+@define-color fg_filled_active #f0f0f0;
+@define-color bg_filled_active #993745;
+
+GtkWindow {
+  color: @text_normal;
+  background-color: @ffffff;
+  background-image: url("./backgrounds/noise-black.png");
+  background-repeat: repeat;
+}
+@import url("gtk-widgets.css");

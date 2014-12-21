@@ -1,0 +1,320 @@
+/* vim: set sts=2 sw=2: */
+
+@define-color darkgray #404040;
+* {
+  engine: none;
+  -GtkArrow-arrow-scaling: 0.5;
+  -GtkButton-child-displacement-x: 0;
+  -GtkButton-child-displacement-y: 0;
+  -GtkButton-default-border: 0;
+  -GtkButton-image-spacing: 0;
+  -GtkButton-interior-focus: true;
+  -GtkButton-inner-border: 3;
+  -GtkCheckButton-indicator-size: 15;
+  -GtkCheckMenuItem-indicator-size: 12;
+  -GtkEntry-inner-border: 0;
+  -GtkEntry-progress-border: 0;
+  -GtkExpander-expander-size: 12;
+  -GtkHTML-link-color: @text_link;
+  -GtkIMHtml-hyperlink-color: @text_link;
+  -GtkMenu-horizontal-padding: 0;
+  -GtkMenu-vertical-padding: 0;
+  -GtkMenuBar-internal-padding: 0;
+  -GtkMenuItem-arrow-scaling: 0.4;
+  -GtkNotebook-initial-gap: 0;
+  -GtkNotebook-tab-overlap: -2;
+  -GtkPaned-handle-size: 1;
+  -GtkProgressBar-min-horizontal-bar-height: 10;
+  -GtkProgressBar-min-vertical-bar-width: 10;
+  -GtkRange-slider-width: 9;
+  -GtkRange-stepper-size: 0;
+  -GtkRange-stepper-spacing: 0;
+  -GtkRange-trough-border: 3;
+  -GtkRange-trough-under-steppers: 1;
+  -GtkScale-trough-border: 1;
+  -GtkScrollbar-activate-slider: 0
+  -GtkScrollbar-trough-border: 1;
+  -GtkScrollbar-slider-width: 15;
+  -GtkScrollbar-min-slider-length: 50;
+  -GtkScrolledWindow-scrollbar-spacing: 0;
+  -GtkScrolledWindow-scrollbars-within-bevel: 1;
+  -GtkSeparatorMenuItem-horizontal-padding: 0;
+  -GtkStatusbar-shadow-type: none;
+  -GtkTextView-error-underline-color: text_error;
+  -GtkToolButton-icon-spacing: 6;
+  -GtkToolItemGroup-expander-size: 11;
+  -GtkToolbar-internal-padding: 0;
+  -GtkTreeView-expander-size: 11;
+  -GtkTreeView-vertical-separator: 0;
+  -GtkWidget-wide-separators: true;
+  -GtkWidget-separator-width: 1;
+  -GtkWidget-separator-height: 1;
+  -GtkWidget-focus-padding: 0;
+  -GtkWidget-focus-line-width: 1;
+  -GtkWidget-link-color: @text_link;
+  -GtkWidget-visited-link-color: @text_link;
+  -GtkWindow-resize-grip-width: 13;
+  -GtkWindow-resize-grip-height: 13;
+  -WnckTasklist-fade-overlay-rect: 0;
+}
+
+* {
+  margin: 2px;
+  padding: 2px;
+  border-width: 0px;
+  color: inherit;
+}
+
+*:hover,
+*:active:hover {
+  color: @fg_filled_hover;
+  background-color:alpha(@bg_filled_hover, 0.9);
+}
+
+*:active,
+*:selected,
+*:selected:focused {
+  color: @fg_filled_active;
+  background-color:alpha(@bg_filled_active, 0.9);
+}
+
+*:insensitive {
+  background-color: @transparent;
+  color: @fg_filled_insensitive;
+}
+
+.menu {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: alpha(@bg_filled_normal, 0.06);
+}
+
+.menubar {
+  background-color: alpha(@darkgray, 0.165);
+}
+
+.toolbar {
+  color: @text_normal;
+  background-color: alpha(@darkgray, 0.3);
+}
+
+.view {
+  color: @text_normal;
+  background-color: alpha(@base_normal, 0.9);
+}
+
+.view:selected,
+.view:active:selected,
+.view:active {
+  color: @fg_filled_active;
+  background-color: alpha(@bg_filled_active, 0.9);
+}
+
+.entry {
+  color: @text_normal;
+  background-color: @transparent;
+  border-width: 0px;
+  border-color: @transparent;
+  background-image: -gtk-gradient (
+    linear,
+    left top, left bottom,
+    from (@transparent),
+    color-stop (0.90, @transparent),
+    color-stop (0.91, alpha(@bg_filled_normal, 0.3)),
+    to (alpha(@bg_filled_normal, 0.3)));
+}
+
+
+.scrollbar {
+  -GtkRange-trough-border: 3px;
+  -GtkRange-arrow-scaling: 0px;
+  -GtkRange-slider-width: 12px;
+  -GtkRange-stepper-size: 0px;
+
+  -GtkVScale-slider-length: 11px;
+  -GtkVScale-slider-width: 21px;
+  -GtkHScale-slider-length: 11px;
+  -GtkHScale-slider-width: 21px;
+  -GtkScrollbar-min-slider-length: 10px;
+
+  -GtkRange-stepper-spacing: 0px;
+  -GtkRange-trough-under-steppers: 1px;
+  background-color: @transparent;
+}
+
+.scrollbar.slider{
+  background-color:  alpha(@bg_filled_normal, 0.3);
+  border-radius:    20px;
+
+}
+
+.scrollbar.slider:hover,
+.scrollbar.slider:prelight:active {
+  background-color:   alpha(@bg_filled_normal, 0.6);
+  border-radius:    20px;
+}
+
+.scale {
+  border: 0px;
+  color: alpha(@fg_filled_normal, 0.0);
+  -GtkScale-slider-length: 16;
+  -GtkRange-slider-width: 20;
+  -GtkRange-trough-border: 0;
+  -GtkWidget-focus-line-width: 0;
+}
+
+.scale.slider,
+.scale.slider:hover {
+  border-width: 0px;
+  background-color: @transparent;
+  background-image: url("./arrows/down-normal.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.scale.slider.vertical,
+.scale.slider.vertical:hover {
+  background-color: @transparent;
+  background-image: url("./arrows/right-normal.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.scale.trough {
+  background-image: -gtk-gradient (
+    linear,
+    left top, left bottom,
+    from (@transparent),
+    color-stop (0.90, @transparent),
+    color-stop (0.91, alpha(@bg_filled_normal, 0.3)),
+    to (alpha(@bg_filled_normal, 0.3)));
+}
+
+.scale.trough.vertical {
+  background-image: -gtk-gradient (
+    linear,
+    left top, right top,
+    from (@transparent),
+    color-stop (0.90, @transparent),
+    color-stop (0.91, alpha(@bg_filled_normal, 0.3)),
+    to (alpha(@bg_filled_normal, 0.3)));
+  background-repeat: repeat-y;
+}
+
+.progressbar,
+.entry.progressbar,
+.progressbar row:hover,
+.progressbar row:selected,
+.progressbar row:selected:focused {
+  background-color: alpha(@bg_filled_normal, 0.3);
+}
+
+.button GtkLabel,
+.button {
+  color: @fg_filled_normal;
+  background-color: alpha(@bg_filled_normal, 0.3);
+}
+
+.button GtkLabel:hover,
+.button GtkLabel:active:hover,
+.button:hover,
+.button:active:hover {
+  color: @fg_filled_hover;
+  background-color: alpha(@bg_filled_hover, 0.9);
+}
+
+.button GtkLabel:active,
+.button:active {
+  color: @fg_filled_active;
+  background-color: alpha(@bg_filled_active, 0.9);
+}
+
+.button GtkLabel:insensitive,
+.button:insensitive {
+  color: @fg_filled_insensitive;
+  background-color: @transparent;
+}
+
+.spinbutton.button,
+.spinbutton.button:selected,
+.spinbutton.button:selected:focused {
+  background-color: @transparent;
+  background-image: -gtk-gradient (
+    linear,
+    left top, left bottom,
+    from (alpha(@bg_filled_normal, 0.3)),
+    color-stop (0.90, alpha(@bg_filled_normal, 0.3)),
+    color-stop (0.91, @transparent),
+    to (@transparent));
+}
+
+.spinbutton.button:hover {
+  background-color: @transparent;
+  background-image: -gtk-gradient (
+    linear,
+    left top, left bottom,
+    from (alpha(@bg_filled_hover, 0.9)),
+    color-stop (0.90, alpha(@bg_filled_hover, 0.9)),
+    color-stop (0.91, @transparent),
+    to (@transparent));
+}
+.spinbutton.button:active {
+  background-color: @transparent;
+  background-image: -gtk-gradient (
+    linear,
+    left top, left bottom,
+    from (alpha(@bg_filled_active, 0.9)),
+    color-stop (0.90, alpha(@bg_filled_active, 0.9)),
+    color-stop (0.91, @transparent),
+    to (@transparent));
+}
+.spinbutton.button:insensitive {
+  background-image: none;
+}
+
+.check {
+  background-color: @transparent;
+  background-image: url("./buttons/check/normal.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.check:active {
+  background-color: @transparent;
+  background-image: url("./buttons/check/active.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.radio {
+  background-color: @transparent;
+  background-image: url("./buttons/radio/normal.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.radio:active {
+  background-color: @transparent;
+  background-image: url("./buttons/radio/active.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+GtkLabel:active {
+  color: @fg_filled_normal;
+}
+GtkLabel:active:hover {
+  color: @fg_filled_hover;
+}
+
+.notebook {
+  color: @fg_filled_normal;
+  background-color: alpha(@bg_filled_normal, 0.1);
+}
+.notebook tab {
+  color: @fg_filled_normal;
+  background-color: alpha(@bg_filled_normal, 0.3);
+}
+.notebook tab:active {
+  color: @fg_filled_normal;
+  background-color: alpha(@bg_filled_normal, 0.1);
+}
