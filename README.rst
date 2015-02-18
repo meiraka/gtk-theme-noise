@@ -2,4 +2,4 @@
 gtk-theme-noise
 ===============
 
-simplicity gtk2 theme
+simplicity gtk2/gtk3 theme
