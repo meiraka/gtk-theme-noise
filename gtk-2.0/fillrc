@@ -10,7 +10,7 @@ style "fill"
     bg[NORMAL]                        = "#d0d0d0"
     bg[PRELIGHT]                      = "#7f1926"
     bg[ACTIVE]                        = "#993745"
-    GtkTreeView::odd_row_color        = "#7f1926"
+    GtkTreeView::odd_row_color        = "#f0f0f0"
     GtkTreeView::even_row_color       = "#ffffff"
 }
 
