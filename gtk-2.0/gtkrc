@@ -57,6 +57,9 @@ style "default"
     GtkNotebook::shadow_type = GTK_SHADOW_NONE
     GtkStatusbar::shadow_type = GTK_SHADOW_NONE
     GtkSpinButton::shadow_type = GTK_SHADOW_NONE
+    GtkTreeView::odd-row-color = "#ffffff"
+    GtkTreeView::even-row-color = "#ffffff"
+    GtkTreeView::allow-rules = 1
 
     engine "pixmap" {
         image
